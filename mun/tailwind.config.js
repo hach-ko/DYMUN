@@ -1,3 +1,4 @@
+// filepath: c:\Users\DELL\Desktop\DYMUN\mun\tailwind.config.js
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
