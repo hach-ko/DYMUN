@@ -26,11 +26,11 @@ const teamMembers = [
 ];
 
 const ocMembers = [
-  { name: 'Alice Johnson', role: 'Registration Coordinator' },
-  { name: 'Mike Chen', role: 'Technology Lead' },
-  { name: 'Sarah Davis', role: 'Communications Director' },
-  { name: 'Alex Rodriguez', role: 'Logistics Manager' },
-  { name: 'Emma Thompson', role: 'Finance Coordinator' },
+  { name: 'Alice Johnson', role: 'Social Media' },
+  { name: 'Mike Chen', role: 'IT Team' },
+  { name: 'Sarah Davis', role: 'Content Management / Editing Team' },
+  { name: 'Alex Rodriguez', role: 'Logistics' },
+  { name: 'Emma Thompson', role: 'Hospitality' },
   { name: 'David Kim', role: 'Events Coordinator' }
 ];
 
@@ -81,7 +81,7 @@ export default function AboutUs() {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-white rounded-xl shadow-lg text-center">
                 <Globe className="h-10 w-10 mx-auto text-blue-600 mb-2" />
-                <h3 className="font-semibold">Global Perspective</h3>
+                <h3 className="font-semibold">Global Awareness</h3>
               </div>
               <div className="p-6 bg-white rounded-xl shadow-lg text-center mt-8">
                 <Users className="h-10 w-10 mx-auto text-blue-600 mb-2" />
@@ -117,7 +117,7 @@ export default function AboutUs() {
         {/* Committee Chairs */}
         <section className="py-20 max-w-5xl mx-auto">
           <div>
-            <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Our Distinguished Chairs</h2>
+            <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Our Distinguished Chairs/Co-Chairs</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {chairs.map(chair => (
                 <div key={chair.name} className="bg-white p-6 rounded-xl shadow-lg">
@@ -132,7 +132,7 @@ export default function AboutUs() {
 
         {/* Organizing Committee */}
         <section className="py-20 bg-white/50 backdrop-blur-md max-w-5xl mx-auto rounded-xl">
-          <div>
+          <div className="text-center">
             <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Organizing Committee</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {ocMembers.map(member => (

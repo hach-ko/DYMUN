@@ -51,22 +51,22 @@ const contactMethods = [
 
 const teamContacts = [
 	{
-		name: 'John Doe',
+		name: 'Aayan Kumar',
 		role: 'Secretary General',
-		email: 'secretary@dymun2025.com',
-		phone: '+1 (555) 111-2222',
+		email: '',
+		phone: '+91 86574 40454',
 	},
 	{
-		name: 'Jane Smith',
-		role: 'Director General',
-		email: 'director@dymun2025.com',
-		phone: '+1 (555) 333-4444',
+		name: 'Yuvraj Behera',
+		role: 'Deputy Joint Secretary General',
+		email: '',
+		phone: '+91 86578 40015',
 	},
 	{
-		name: 'Sam Wilson',
-		role: 'Head of Organizing Committee',
-		email: 'organizing@dymun2025.com',
-		phone: '+1 (555) 555-6666',
+		name: 'Suvirr Menon',
+		role: 'Deputy Joint Secretary General',
+		email: '',
+		phone: '+91 93219 91723',
 	},
 ];
 
@@ -144,52 +144,33 @@ export default function Connect() {
 							<h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">
 								Key Contacts
 							</h3>
-							<div className="grid md:grid-cols-3 gap-6">
-								{teamContacts.map((member, index) => (
-									<Card
-										key={index}
-										className="border-none shadow-lg bg-white/80 backdrop-blur-sm"
-									>
-										<CardContent className="p-6 text-center">
-											<h4 className="text-xl font-bold text-slate-900 mb-2">
-												{member.name}
-											</h4>
-											<p className="text-blue-600 font-medium mb-4">
-												{member.role}
-											</p>
-											<div className="space-y-2">
-												<Button
-													variant="outline"
-													size="sm"
-													asChild
-													className="w-full"
-												>
-													<a href={`mailto:${member.email}`}>
-														<Mail className="w-4 h-4 mr-2" />
-														Email
-													</a>
-												</Button>
-												<Button
-													variant="outline"
-													size="sm"
-													asChild
-													className="w-full"
-												>
-													<a
-														href={`tel:${member.phone.replace(
-															/[^\d+]/g,
-															''
-														)}`}
-													>
-														<Phone className="w-4 h-4 mr-2" />
-														Call
-													</a>
-												</Button>
-											</div>
-										</CardContent>
-									</Card>
-								))}
-							</div>
+																			<div className="grid md:grid-cols-3 gap-6">
+																				{teamContacts.map((member, index) => (
+																					<Card
+																						key={index}
+																						className="border-none shadow-lg bg-white/90 backdrop-blur-md transition-all duration-300"
+																					>
+																						<CardContent className="p-6 text-center flex flex-col items-center justify-center">
+																							<h4 className="text-xl font-bold text-slate-900 mb-2">
+																								{member.name}
+																							</h4>
+																							<p className="text-blue-600 font-medium mb-4">
+																								{member.role}
+																							</p>
+																							<a
+																								href={`tel:${member.phone.replace(/[^\d+]/g, '')}`}
+																								target="_blank"
+																								rel="noopener noreferrer"
+																								className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-blue-200 bg-white text-slate-800 font-semibold text-base shadow hover:shadow-md transition-all duration-200 no-underline"
+																								style={{ textDecoration: 'none', color: '#1e293b', background: '#fff' }}
+																							>
+																								<Phone className="w-5 h-5" />
+																								<span>{member.phone}</span>
+																							</a>
+																						</CardContent>
+																					</Card>
+																				))}
+																			</div>
 						</div>
 
 						{/* Additional Information */}
@@ -265,7 +246,11 @@ export default function Connect() {
 							Can&apos;t find what you&apos;re looking for? Check out our
 							comprehensive FAQ section or contact us directly.
 						</p>
-						<Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+						<Button
+							size="lg"
+							className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold rounded-xl px-8 py-4 shadow-lg hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-all duration-300 border-none"
+							style={{ boxShadow: '0 8px 32px 0 rgba(59,130,246,0.12)', fontSize: '1.25rem', letterSpacing: '-0.01em' }}
+						>
 							View FAQ
 						</Button>
 					</div>

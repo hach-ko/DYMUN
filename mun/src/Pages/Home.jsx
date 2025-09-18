@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Layout from "../Layout";
 import { Button } from "../components/ui/Button";
-import { Users, ArrowRight, Globe, Award } from "lucide-react";
+import { Users, ArrowRight } from "lucide-react";
 import Logo from "../assets/DYMUN.png";
 
-const SIDEBAR_WIDTH = 260; // Slightly wider for theme
+const SIDEBAR_WIDTH = 260;
 
-// Modern, Diplomatic & Engaging committee cards with images, chair, and level
+// Committees data (with updated images for SDG 5, ECOFIN, HCC, IP)
 const committeeGroups = [
 	{
 		title: "Primary School (Grades 3-5)",
@@ -15,27 +15,27 @@ const committeeGroups = [
 		committees: [
 			{
 				name: "Harry Potter",
-				img: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800",
 				subtitle: "Harry Potter: Rebuilding the Wizarding World",
 				topic: "Addressing Infrastructure, Governance, and Social Healing in the Aftermath of the Battle of Hogwarts",
 				chair: "Professor McGonagall",
 				level: "Primary School",
+				img: "https://images.unsplash.com/photo-1618944913480-b67ee16d7b77?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "Disney",
-				img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
 				subtitle: "Disney: Regulating the Use of Magic",
 				topic: "Should Magical Abilities Be Governed by Law or Freely Practiced by All",
 				chair: "Fairy Godmother",
 				level: "Primary School",
+				img: "https://images.unsplash.com/photo-1605443790760-18c6121939d3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "FIFA",
-				img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=800&q=80",
-				subtitle: "FIFA: Global Football",
+				subtitle: "FIFA: Combating Discrimination in Football",
 				topic: "Combating Discrimination and Social Inequality in Global Football.",
 				chair: "Gianni Infantino",
 				level: "Primary School",
+				img: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 		],
 	},
@@ -46,35 +46,35 @@ const committeeGroups = [
 		committees: [
 			{
 				name: "CTC",
-				img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
-				subtitle: "CTC: Counter-Terrorism Committee",
+				subtitle: "CTC (Counter-Terrorism Committee)",
 				topic: "Deliberating Strategies to Disrupt Terrorist Financing Networks and Curb the Use of Illicit Financial Channels",
 				chair: "Ms. Radhika Singh",
 				level: "Middle School",
+				img: "https://plus.unsplash.com/premium_photo-1683134547428-f1c28addd588?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "UNOOSA",
-				img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
-				subtitle: "UNOOSA: Outer Space Affairs",
+				subtitle: "UNOOSA (Outer Space Affairs)",
 				topic: "Global Framework to Prevent the Weaponization of Space-Based Technologies and Aggressive Militarization",
 				chair: "Dr. Lars Müller",
 				level: "Middle School",
+				img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80",
 			},
 			{
-				name: "UNHCR",
-				img: "https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-				subtitle: "UNHCR: Refugees",
-				topic: "Deliberation on the Protection of Syrian Refugees: Ensuring Safe Passage, Sustained Humanitarian Assistance, and Long-Term Integration Strategies",
-				chair: "Ms. Leila Haddad",
+				name: "IPL",
+				subtitle: "IPL (Indian Premier League): AUCTION",
+				topic: "IPL Auction Simulation",
+				chair: "Mr. Virat Kohli",
 				level: "Middle School",
+				img: "https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?q=80&w=1357&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
-				name: "UNW",
-				img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop",
-				subtitle: "UNW: Women",
+				name: "SDG 5",
+				subtitle: "SDG 5 (Gender Equality)",
 				topic: "Addressing gender-based disparities in Representation in Political Institutions and Decision-Making Processes.",
 				chair: "Ms. Chloe Dubois",
 				level: "Middle School",
+				img: "https://images.unsplash.com/photo-1590274853856-f22d5ee3d228?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 		],
 	},
@@ -85,57 +85,100 @@ const committeeGroups = [
 		committees: [
 			{
 				name: "ECOFIN",
-				img: "https://images.unsplash.com/photo-1620712943543-959636834a5f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-				subtitle: "ECOFIN: Economic & Financial",
+				subtitle: "ECOFIN (Economic and Financial Committee)",
 				topic: "Dollar Dominance: Deliberating on shifting towards a multi-currency system for trading.",
 				chair: "Mr. Charles Dubois",
 				level: "High School",
+				img: "https://images.unsplash.com/photo-1607037183811-2a54d746cd35?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "UNSC",
-				img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-				subtitle: "UNSC: Security Council",
+				subtitle: "UNSC (Security Council)",
 				topic: "Role of Non State Actors and Private Military Contractors for the Situation in the Sahel: Terrorism, Coups, and Regional Instability",
 				chair: "Eleanor Vance",
 				level: "High School",
+				img: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
 			},
 			{
 				name: "AIPPM",
-				img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
-				subtitle: "AIPPM: Indian Politics",
+				subtitle: "AIPPM (All India Political Party Meet)",
 				topic: "Deliberation on Enhancing Judicial Efficiency and Accountability in India whilst Balancing Legal Reform, Transparency, and Public Trust",
 				chair: "Mr. Rajiv Menon",
 				level: "High School",
+				img: "https://images.unsplash.com/photo-1596574027151-2ce81d85af3e?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "ICJ",
-				img: "https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200",
-				subtitle: "ICJ: International Court of Justice",
+				subtitle: "ICJ (International Court of Justice)",
 				topic: "Application of the Convention on the Prevention and Punishment of the Crime of Genocide in Sudan (Sudan v. United Arab Emirates)",
 				chair: "Ms. Fatima Al-Jamil",
 				level: "High School",
+				img: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "HCC",
-				img: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470&auto=format&fit=crop",
-				subtitle: "HCC: Historical Crisis",
+				subtitle: "HCC (Historical Crisis Committee)",
 				topic: "Accountability for Nuclear Brinkmanship During the Cold War considering the Cuban Missile Crisis, Berlin standoffs, and general US-USSR nuclear threats. (Freeze date: February 15, 1989)",
 				chair: "Dr. Aris Patel",
 				level: "High School",
+				img: "https://plus.unsplash.com/premium_photo-1682125784386-d6571f1ac86a?q=80&w=908&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 			{
 				name: "IP",
-				img: "https://images.unsplash.com/photo-1488521787991-ed7b2f28a727?q=80&w=1470&auto=format&fit=crop",
-				subtitle: "IP: International Press",
+				subtitle: "IP (International Press)",
 				topic: "International Press",
 				chair: "Ms. Hannah Weiss",
 				level: "High School",
+				img: "https://images.unsplash.com/photo-1503428593586-e225b39bddfe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 			},
 		],
 	},
 ];
 
 export default function Home() {
+	// All committee names for buttons
+	const allCommittees = committeeGroups.flatMap((g) => g.committees.map((c) => c.name));
+	// Refs for each committee card
+	const committeeRefs = {};
+	committeeGroups.forEach((group) => {
+		group.committees.forEach((c) => {
+			committeeRefs[c.name] = useRef();
+		});
+	});
+
+	// Button click scroll handler
+	const handleCommitteeClick = (name) => {
+		const ref = committeeRefs[name];
+		if (ref && ref.current) {
+			ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
+		}
+	};
+
+	// Scroll to top on page mount
+	useEffect(() => {
+		window.scrollTo({ top: 0, behavior: "auto" });
+	}, []);
+
+	// Custom styles for committee buttons (no underline, always white, no blue)
+	const committeeBtn =
+		"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-blue-300 bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 hover:text-white hover:no-underline h-10 px-4 py-2 select-none";
+	const btnStyle = {
+		boxShadow: "0 2px 8px 0 rgba(60,60,120,0.07)",
+		transition: "all 0.35s cubic-bezier(.4,0,.2,1)",
+		fontWeight: 500,
+		textDecoration: "none",
+		userSelect: "none",
+	};
+
+	// Prepare committee cards segregated by group
+	const committeeCardsByGroup = committeeGroups.map((group) => ({
+		groupTitle: group.title,
+		committees: group.committees.map((c) => ({
+			...c,
+			badge: group.badge,
+		})),
+	}));
+
 	return (
 		<Layout currentPageName="Home">
 			<div
@@ -252,84 +295,67 @@ export default function Home() {
 					<h2 className="text-5xl font-bold text-center text-slate-900 mb-6">
 						Available Committees
 					</h2>
-					<p className="text-xl text-center text-slate-600 mb-16 max-w-3xl mx-auto">
+					<p className="text-xl text-center text-slate-600 mb-10 max-w-3xl mx-auto">
 						Choose from a diverse range of committees tailored for different grade levels and experience.
 					</p>
-					<div className="space-y-16">
-						{committeeGroups.map((group) => {
-							// Trait: If only one card, center it
-							const isSingle = group.committees.length === 1;
-							// Trait: For Middle School, center UNW if it's the only card in the last row
-							const isMiddleSchool = group.title.includes("Middle School");
-							const lastRowHasOne = isMiddleSchool && group.committees.length % 3 === 1;
-							return (
-								<div key={group.title}>
-									<h3 className={`text-3xl font-bold mb-6 text-center text-slate-900`}>
-										<span className={`inline-block px-4 py-2 rounded-xl bg-gradient-to-r ${group.color} text-white shadow-lg`}>
-											{group.title}
-										</span>
-									</h3>
-									<div
-										className={
-											isSingle
-												? "flex justify-center"
-												: "grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-										}
-									>
-										{group.committees.map((c, idx) => {
-											// For Middle School, center UNW if it's the last card and last row has one
-											const shouldCenterUNW =
-												isMiddleSchool &&
-												c.name === "UNW" &&
-												lastRowHasOne &&
-												idx === group.committees.length - 1;
-											return (
-												<div
-													key={c.name}
-													className={
-														"rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/90 backdrop-blur-sm group hover:-translate-y-1 hover:scale-105 flex flex-col justify-between" +
-														(shouldCenterUNW ? " mx-auto" : "")
-													}
-													style={
-														isSingle || shouldCenterUNW
-															? { maxWidth: 400, minWidth: 280 }
-															: {}
-													}
-												>
-													<div className="relative overflow-hidden rounded-t-xl h-48">
-														<img
-															src={c.img}
-															alt={c.subtitle}
-															className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-														/>
-														<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-														<div className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold absolute top-4 right-4 transition-all duration-300 group-hover:scale-110 shadow-lg border-2 ${group.badge}`}>
-															{c.level}
-														</div>
-													</div>
-													<div className="flex flex-col space-y-1.5 p-6 pt-6">
-														<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300">{c.name}</h3>
-														<p className="text-sm text-slate-600 font-medium h-12 leading-tight">{c.subtitle}</p>
-													</div>
-													<div className="p-6 pt-0">
-														<p className="text-sm text-slate-500 line-clamp-3 h-16 leading-relaxed">{c.topic}</p>
-														<div className="mt-4 flex items-center gap-2 text-xs text-slate-400">
-															<Users className="w-3 h-3" />
-															<span>Chair: {c.chair}</span>
-														</div>
-													</div>
-												</div>
-											);
-										})}
-									</div>
-								</div>
-							);
-						})}
+					{/* Committee Filter Buttons */}
+					<div className="mb-10 flex flex-wrap gap-2 justify-center">
+						{allCommittees.map((name) => (
+							<button
+								key={name}
+								className={committeeBtn}
+								style={btnStyle}
+								onClick={() => handleCommitteeClick(name)}
+								tabIndex={0}
+							>
+								{name}
+							</button>
+						))}
 					</div>
+					{/* Segregated committees by school group */}
+					{committeeCardsByGroup.map((group) => (
+						<div key={group.groupTitle} className="mb-16">
+							<h3 className="text-3xl font-bold text-slate-800 mb-6 text-left md:text-center">{group.groupTitle}</h3>
+							<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+								{group.committees.map((c) => (
+									<div
+										key={c.name}
+										ref={committeeRefs[c.name]}
+										className="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/90 backdrop-blur-sm group hover:-translate-y-1 hover:scale-105 flex flex-col justify-between"
+										style={{ userSelect: "none" }}
+									>
+										<div className="relative overflow-hidden rounded-t-xl h-48">
+											<img
+												src={c.img}
+												alt={c.subtitle}
+												className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 select-none"
+												draggable={false}
+											/>
+											<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+											<div className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold absolute top-4 right-4 transition-all duration-300 group-hover:scale-110 shadow-lg border-2 ${c.badge}`}>
+												{c.level}
+											</div>
+										</div>
+										<div className="flex flex-col space-y-1.5 p-6 pt-6">
+											<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 select-none">{c.name}</h3>
+											<p className="text-sm text-slate-600 font-medium h-12 leading-tight select-none">{c.subtitle}</p>
+										</div>
+										<div className="p-6 pt-0">
+											<p className="text-sm text-slate-500 line-clamp-3 h-16 leading-relaxed select-none">{c.topic}</p>
+											<div className="mt-4 flex items-center gap-2 text-xs text-slate-400 select-none">
+												<Users className="w-3 h-3" />
+												<span>Chair: {c.chair}</span>
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</div>
+					))}
 				</section>
 
 				{/* Why Join DYMUN */}
-				<section className="px-6 py-20 bg-white/60 backdrop-blur-md">
+				<section className="px-6 py-20 bg-white/60 backdrop-blur-md select-none">
 					<div className="max-w-7xl mx-auto">
 						<h2 className="text-5xl font-bold text-center text-slate-900 mb-6">
 							Why Join DYMUN?
@@ -338,80 +364,68 @@ export default function Home() {
 							Experience the thrill of international diplomacy while building
 							lifelong skills and friendships across all educational levels
 						</p>
-						<div className="grid md:grid-cols-3 gap-10">
-							<div>
-								<div className="rounded-lg border text-card-foreground border-none shadow-xl hover:shadow-2xl transition-all duration-500 h-full bg-white/90 backdrop-blur-sm group hover:-translate-y-2">
-									<div className="flex flex-col space-y-1.5 p-6 text-center pb-6">
-										<div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-											<Users className="w-10 h-10 text-white" />
+						<div className="grid md:grid-cols-3 gap-6">
+							{[
+								{
+									icon: <Users className="w-8 h-8 text-white" />,
+									bg: "from-blue-500 to-cyan-500",
+									title: "Diverse Community",
+									desc: "Connect with passionate students from different schools and backgrounds across all grade levels",
+								},
+								{
+									icon: (
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="w-8 h-8 text-white"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<circle cx="12" cy="12" r="10"></circle>
+											<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+											<path d="M2 12h20"></path>
+										</svg>
+									),
+									bg: "from-purple-500 to-pink-500",
+									title: "Real-World Issues",
+									desc: "Debate and negotiate solutions to pressing global challenges tailored to your experience level",
+								},
+								{
+									icon: (
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											className="w-8 h-8 text-white"
+											fill="none"
+											viewBox="0 0 24 24"
+											stroke="currentColor"
+										>
+											<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+											<circle cx="12" cy="8" r="6"></circle>
+										</svg>
+									),
+									bg: "from-orange-500 to-red-500",
+									title: "Leadership Skills",
+									desc: "Develop critical thinking, public speaking, and diplomatic abilities through immersive simulations",
+								},
+							].map((card, idx) => (
+								<div key={card.title} className="select-none">
+									<div className={`rounded-lg border border-blue-200 text-card-foreground shadow-xl transition-all duration-300 h-full bg-white/90 backdrop-blur-sm group hover:-translate-y-2 hover:shadow-2xl p-4`}> {/* Reduced padding */}
+										<div className="flex flex-col space-y-1.5 text-center pb-4"> {/* Reduced padding */}
+											<div className={`w-14 h-14 bg-gradient-to-br ${card.bg} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-xl`}>
+												{card.icon}
+											</div>
+											<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 select-none">
+												{card.title}
+											</h3>
 										</div>
-										<h3 className="text-2xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all duration-300">
-											Diverse Community
-										</h3>
-									</div>
-									<div className="p-6 pt-0">
-										<p className="text-slate-600 text-center leading-relaxed text-lg">
-											Connect with passionate students from different schools and
-											backgrounds across all grade levels
-										</p>
+										<div>
+											<p className="text-slate-600 text-center leading-relaxed text-base select-none">
+												{card.desc}
+											</p>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div>
-								<div className="rounded-lg border text-card-foreground border-none shadow-xl hover:shadow-2xl transition-all duration-500 h-full bg-white/90 backdrop-blur-sm group hover:-translate-y-2">
-									<div className="flex flex-col space-y-1.5 p-6 text-center pb-6">
-										<div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												className="w-10 h-10 text-white"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke="currentColor"
-											>
-												<circle cx="12" cy="12" r="10"></circle>
-												<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-												<path d="M2 12h20"></path>
-											</svg>
-										</div>
-										<h3 className="text-2xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all duration-300">
-											Real-World Issues
-										</h3>
-									</div>
-									<div className="p-6 pt-0">
-										<p className="text-slate-600 text-center leading-relaxed text-lg">
-											Debate and negotiate solutions to pressing global challenges
-											tailored to your experience level
-										</p>
-									</div>
-								</div>
-							</div>
-							<div>
-								<div className="rounded-lg border text-card-foreground border-none shadow-xl hover:shadow-2xl transition-all duration-500 h-full bg-white/90 backdrop-blur-sm group hover:-translate-y-2">
-									<div className="flex flex-col space-y-1.5 p-6 text-center pb-6">
-										<div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-xl">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												className="w-10 h-10 text-white"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke="currentColor"
-											>
-												<path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
-												<circle cx="12" cy="8" r="6"></circle>
-											</svg>
-										</div>
-										<h3 className="text-2xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:bg-clip-text transition-all duration-300">
-											Leadership Skills
-										</h3>
-									</div>
-									<div className="p-6 pt-0">
-										<p className="text-slate-600 text-center leading-relaxed text-lg">
-											Develop critical thinking, public speaking, and diplomatic
-											abilities through immersive simulations
-										</p>
-									</div>
-								</div>
-							</div>
+							))}
 						</div>
 					</div>
 				</section>
@@ -433,9 +447,9 @@ export default function Home() {
 							size="medium"
 							variant="primary"
 							asChild
-							style={{ minWidth: 180, fontWeight: 600, background: "#fff", color: "#2563eb" }}
+							style={{ minWidth: 180, fontWeight: 600, background: "#fff", color: "#2563eb", userSelect: "none" }}
 						>
-							<a href="/Register">Join DYMUN 2025</a>
+							<a href="/Register" style={{ userSelect: "none" }}>Join DYMUN 2025</a>
 						</Button>
 					</div>
 				</section>
