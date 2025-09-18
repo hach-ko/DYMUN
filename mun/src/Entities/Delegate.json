@@ -1,0 +1,40 @@
+[
+  {
+    "full_name": "Jane Doe",
+    "email": "jane@example.com",
+    "school_name": "Springfield High",
+    "phone": "1234567890",
+    "grade_year": "11",
+    "previous_mun_experience": "beginner",
+    "preferred_committee_1": "UNSC",
+    "preferred_committee_2": "WHO",
+    "preferred_committee_3": "UNICEF",
+    "country_preference_1": "USA",
+    "country_preference_2": "UK",
+    "country_preference_3": "France",
+    "dietary_requirements": "Vegetarian",
+    "emergency_contact": "John Doe, 0987654321",
+    "registration_status": "confirmed",
+    "assigned_committee": "UNSC",
+    "assigned_country": "USA"
+  },
+  {
+    "full_name": "John Smith",
+    "email": "john@example.com",
+    "school_name": "Riverdale Academy",
+    "phone": "2345678901",
+    "grade_year": "12",
+    "previous_mun_experience": "intermediate",
+    "preferred_committee_1": "WHO",
+    "preferred_committee_2": "UNICEF",
+    "preferred_committee_3": "UNSC",
+    "country_preference_1": "India",
+    "country_preference_2": "China",
+    "country_preference_3": "Japan",
+    "dietary_requirements": "None",
+    "emergency_contact": "Jane Smith, 1234567890",
+    "registration_status": "pending",
+    "assigned_committee": "",
+    "assigned_country": ""
+  }
+]

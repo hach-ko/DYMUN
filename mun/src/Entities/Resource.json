@@ -1,0 +1,30 @@
+[
+  {
+    "title": "UNSC ROP Guide",
+    "description": "Rules of Procedure for UNSC.",
+    "url": "https://example.com/unsc-rop.pdf",
+    "type": "rop",
+    "committee_name": "UNSC"
+  },
+  {
+    "title": "WHO Article",
+    "description": "Latest WHO health article.",
+    "url": "https://example.com/who-article",
+    "type": "article",
+    "committee_name": "WHO"
+  },
+  {
+    "title": "General MUN Guide",
+    "description": "A guide for all delegates.",
+    "url": "https://example.com/mun-guide.pdf",
+    "type": "guide",
+    "committee_name": ""
+  },
+  {
+    "title": "UNICEF Video",
+    "description": "Introduction to UNICEF.",
+    "url": "https://example.com/unicef-video",
+    "type": "video",
+    "committee_name": "UNICEF"
+  }
+]

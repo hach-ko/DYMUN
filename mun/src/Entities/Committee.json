@@ -1,0 +1,22 @@
+[
+  {
+    "name": "UNSC",
+    "full_name": "United Nations Security Council",
+    "description": "Addresses international peace and security.",
+    "level": "Advanced",
+    "chair": "Alice Johnson",
+    "co_chair": "Bob Lee",
+    "oc_members": ["Charlie", "Dana"],
+    "image_url": "https://example.com/unsc.jpg"
+  },
+  {
+    "name": "WHO",
+    "full_name": "World Health Organization",
+    "description": "Focuses on global health issues.",
+    "level": "Intermediate",
+    "chair": "Eva Green",
+    "co_chair": "Frank White",
+    "oc_members": ["Grace", "Henry"],
+    "image_url": "https://example.com/who.jpg"
+  }
+]
