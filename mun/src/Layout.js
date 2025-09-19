@@ -23,6 +23,11 @@ export default function Layout({ children, currentPageName }) {
   const location = useLocation();
   const [user, setUser] = useState(null);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location.pathname]);
+
   const navigationItems = [
     { title: "Home", url: createPageUrl("Home"), icon: Home },
     { title: "About Us", url: createPageUrl("AboutUs"), icon: Info },
