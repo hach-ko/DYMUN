@@ -132,10 +132,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
-a:hover {
-  color: #2563eb;
-  text-decoration: underline;
-}
+
 
 /* Logo styling */
 .logo {
@@ -217,4 +214,9 @@ body {
   background: linear-gradient(90deg,#e0eaff 10%,#f1f5f9 90%);
   color: #2563eb !important;
   box-shadow: 0 2px 8px 0 rgba(59,130,246,0.10);
+}
+
+a.no-underline, a.no-underline:hover {
+  text-decoration: none !important;
+  color: inherit !important;
 }
