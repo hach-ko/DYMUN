@@ -155,9 +155,10 @@ export default function Home() {
 	};
 
 	// Scroll to top on page mount
+	// Scroll to top on page mount and route change
 	useEffect(() => {
 		window.scrollTo({ top: 0, behavior: "auto" });
-	}, []);
+	}, []); // Added dependency array to ensure it runs on mount
 
 	// Custom styles for committee buttons (no underline, always white, no blue)
 	const committeeBtn =
@@ -192,7 +193,7 @@ export default function Home() {
 				}}
 			>
 				{/* Hero Section */}
-				<section className="relative px-6 py-24 max-w-7xl mx-auto">
+				<section className="relative px-6 pt-12 pb-24 max-w-7xl mx-auto">
 					<div className="text-center">
 						<div className="flex justify-center mb-8">
 							{/* Logo can go here if needed */}
@@ -431,7 +432,7 @@ export default function Home() {
 				</section>
 
 				{/* Final CTA */}
-				<section className="px-6 py-24 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
+				<section className="px-6 py-24 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden rounded-t-3xl shadow-2xl">
 					<div className="absolute inset-0 bg-black/10"></div>
 					<div className="relative max-w-5xl mx-auto text-center">
 						<h2 className="text-5xl md:text-6xl font-bold text-white mb-8 drop-shadow-lg">

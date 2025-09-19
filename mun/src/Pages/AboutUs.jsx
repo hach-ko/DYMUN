@@ -131,14 +131,14 @@ export default function AboutUs() {
         </section>
 
         {/* Organizing Committee */}
-        <section className="py-20 bg-white/50 backdrop-blur-md max-w-5xl mx-auto rounded-xl">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Organizing Committee</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+        <section className="py-20 bg-white/90 backdrop-blur-md rounded-xl shadow-lg">
+          <div className="text-center max-w-7xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-slate-900 mb-12">Organizing Committee</h2>
+            <div className="grid md:grid-cols-3 gap-8">
               {ocMembers.map(member => (
-                <div key={member.name} className="bg-white p-4 rounded-lg shadow text-center">
-                  <h3 className="font-semibold text-slate-900">{member.name}</h3>
-                  <p className="text-slate-600 text-sm">{member.role}</p>
+                <div key={member.name} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                  <h3 className="font-semibold text-lg text-slate-900">{member.name}</h3>
+                  <p className="text-slate-600 text-sm mt-1">{member.role}</p>
                 </div>
               ))}
             </div>

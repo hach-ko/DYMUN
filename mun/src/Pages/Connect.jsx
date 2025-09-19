@@ -16,36 +16,20 @@ const contactMethods = [
 		color: 'bg-blue-500',
 	},
 	{
-		icon: Phone,
-		title: 'Phone',
-		subtitle: 'Call Us',
-		contact: '+1 (555) 123-4567',
-		action: 'tel:+15551234567',
-		color: 'bg-green-500',
-	},
-	{
 		icon: MessageCircle,
 		title: 'WhatsApp',
 		subtitle: 'Quick Support',
-		contact: '+1 (555) 987-6543',
-		action: 'https://wa.me/15559876543',
+		contact: '+91 86574 40454',
+		action: 'https://wa.me/918657440454',
 		color: 'bg-emerald-500',
 	},
 	{
 		icon: Instagram,
 		title: 'Instagram',
 		subtitle: 'Follow Us',
-		contact: '@dymun2025',
-		action: 'https://instagram.com/dymun2025',
+		contact: '@dymun.nerul',
+		action: 'https://www.instagram.com/dymun.nerul/',
 		color: 'bg-pink-500',
-	},
-	{
-		icon: Twitter,
-		title: 'Twitter',
-		subtitle: 'Latest Updates',
-		contact: '@DYMUN2025',
-		action: 'https://twitter.com/dymun2025',
-		color: 'bg-sky-500',
 	},
 ];
 
@@ -85,7 +69,7 @@ export default function Connect() {
 				}}
 			>
 				{/* Hero Section */}
-				<section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-indigo-600">
+				<section className="py-20 px-7 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-b-3xl shadow-2xl">
 					<div className="max-w-4xl mx-auto text-center">
 						<h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
 							Connect With Us
@@ -97,13 +81,50 @@ export default function Connect() {
 					</div>
 				</section>
 
-				{/* Contact Methods */}
-				<section className="py-20 px-6">
+				{/* Key Contacts Above */}
+				<section className="py-12 px-6">
+					<div className="max-w-6xl mx-auto">
+						<h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">
+							Key Contacts
+						</h3>
+						<div className="grid md:grid-cols-3 gap-6 mb-12">
+							{teamContacts.map((member, index) => (
+								<Card
+									key={index}
+									className="border-none shadow-lg bg-white/90 backdrop-blur-md transition-all duration-300"
+								>
+									<CardContent className="p-6 text-center flex flex-col items-center justify-center">
+										<h4 className="text-xl font-bold text-slate-900 mb-2">
+											{member.name}
+										</h4>
+										<p className="text-blue-600 font-medium mb-4">
+											{member.role}
+										</p>
+										<div className="flex flex-row gap-3 w-full justify-center">
+											<a
+												href={`tel:${member.phone.replace(/[^\d+]/g, '')}`}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-blue-200 bg-white text-slate-800 font-semibold text-base shadow hover:shadow-md transition-all duration-200 no-underline"
+												style={{ textDecoration: 'none', color: '#1e293b', background: '#fff' }}
+											>
+												<Phone className="w-5 h-5" />
+												<span>{member.phone}</span>
+											</a>
+										</div>
+									</CardContent>
+								</Card>
+							))}
+						</div>
+					</div>
+				</section>
+
+				{/* Contact Methods Below */}
+				<section className="py-12 px-6">
 					<div className="max-w-6xl mx-auto">
 						<h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">
 							Get In Touch
 						</h2>
-
 						<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
 							{contactMethods.map((method, index) => (
 								<Card
@@ -138,71 +159,33 @@ export default function Connect() {
 								</Card>
 							))}
 						</div>
-
-						{/* Team Contacts */}
-						<div className="mb-16">
-							<h3 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-								Key Contacts
-							</h3>
-																			<div className="grid md:grid-cols-3 gap-6">
-																				{teamContacts.map((member, index) => (
-																					<Card
-																						key={index}
-																						className="border-none shadow-lg bg-white/90 backdrop-blur-md transition-all duration-300"
-																					>
-																						<CardContent className="p-6 text-center flex flex-col items-center justify-center">
-																							<h4 className="text-xl font-bold text-slate-900 mb-2">
-																								{member.name}
-																							</h4>
-																							<p className="text-blue-600 font-medium mb-4">
-																								{member.role}
-																							</p>
-																							<a
-																								href={`tel:${member.phone.replace(/[^\d+]/g, '')}`}
-																								target="_blank"
-																								rel="noopener noreferrer"
-																								className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg border border-blue-200 bg-white text-slate-800 font-semibold text-base shadow hover:shadow-md transition-all duration-200 no-underline"
-																								style={{ textDecoration: 'none', color: '#1e293b', background: '#fff' }}
-																							>
-																								<Phone className="w-5 h-5" />
-																								<span>{member.phone}</span>
-																							</a>
-																						</CardContent>
-																					</Card>
-																				))}
-																			</div>
-						</div>
-
 						{/* Additional Information */}
 						<div className="grid md:grid-cols-2 gap-8">
 							<Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
 								<CardHeader>
-									<CardTitle className="flex items-center gap-2">
-										<MapPin className="w-5 h-5 text-blue-600" />
-										Location
-									</CardTitle>
-								</CardHeader>
-								<CardContent>
-									<p className="text-slate-600 mb-2">
-										DYMUN 2025 Conference Venue:
-									</p>
-									<p className="font-semibold text-slate-800 mb-4">
-										Grand Conference Center
-										<br />
-										123 Diplomatic Drive
-										<br />
-										New York, NY 10001
-									</p>
-									<Button variant="outline" asChild>
-										<a
-											href="https://maps.google.com"
-											target="_blank"
-											rel="noopener noreferrer"
-										>
-											View on Map
-										</a>
-									</Button>
-								</CardContent>
+														<CardTitle className="flex items-center gap-2">
+															<MapPin className="w-5 h-5 text-blue-600" />
+															Location
+														</CardTitle>
+													</CardHeader>
+													<CardContent>
+														<p className="text-slate-600 mb-2">
+															D Y Patil International School:
+														</p>
+														<p className="font-semibold text-slate-800 mb-4">
+															Sector 7, Nerul, Navi Mumbai,<br />
+															Maharashtra 400706
+														</p>
+														<Button variant="outline" asChild>
+															<a
+																href="https://maps.app.goo.gl/b8uQjjcyc6MyZfaC7"
+																target="_blank"
+																rel="noopener noreferrer"
+															>
+																View Directions
+															</a>
+														</Button>
+													</CardContent>
 							</Card>
 
 							<Card className="border-none shadow-lg bg-white/80 backdrop-blur-sm">
@@ -216,11 +199,11 @@ export default function Connect() {
 									<div className="space-y-2 text-slate-600">
 										<p>
 											<span className="font-semibold">Monday - Friday:</span> 9:00
-											AM - 6:00 PM EST
+											AM - 6:00 PM IST
 										</p>
 										<p>
 											<span className="font-semibold">Saturday:</span> 10:00 AM -
-											4:00 PM EST
+											4:00 PM IST
 										</p>
 										<p>
 											<span className="font-semibold">Sunday:</span> Closed
@@ -235,27 +218,7 @@ export default function Connect() {
 						</div>
 					</div>
 				</section>
-
-				{/* FAQ Section */}
-				<section className="py-20 px-6 bg-white/50 backdrop-blur-md">
-					<div className="max-w-4xl mx-auto text-center">
-						<h2 className="text-4xl font-bold text-slate-900 mb-8">
-							Frequently Asked Questions
-						</h2>
-						<p className="text-xl text-slate-600 mb-8">
-							Can&apos;t find what you&apos;re looking for? Check out our
-							comprehensive FAQ section or contact us directly.
-						</p>
-						<Button
-							size="lg"
-							className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-bold rounded-xl px-8 py-4 shadow-lg hover:from-indigo-700 hover:to-purple-700 hover:scale-105 transition-all duration-300 border-none"
-							style={{ boxShadow: '0 8px 32px 0 rgba(59,130,246,0.12)', fontSize: '1.25rem', letterSpacing: '-0.01em' }}
-						>
-							View FAQ
-						</Button>
-					</div>
-				</section>
 			</div>
 		</Layout>
-	);
+	)
 }
