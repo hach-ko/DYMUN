@@ -99,6 +99,7 @@ const navItems = [
   { path: "/about-us", icon: <Info className="h-5 w-5" />, label: "About Us" },
   { path: "/resources", icon: <BookOpen className="h-5 w-5" />, label: "Resources" },
   { path: "/connect", icon: <MessageCircle className="h-5 w-5" />, label: "Connect" },
+  { path: "/register", icon: <FileText className="h-5 w-5" />, label: "Register" },
 ];
 
 // Sidebar menu item
@@ -118,7 +119,7 @@ function SidebarMenuItem({ to, icon, label }) {
           padding: "12px 16px",
           borderRadius: "0.75rem",
           fontWeight: 600,
-          color: isActive ? "#ffffff" : isHovered ? "#2563eb" : "#334155",
+          color: isActive ? "#ffffff" : isHovered ? "#000000ff" : "#334155",
           background: isActive
             ? "linear-gradient(90deg, #2563eb 10%, #4f46e5 90%)"
             : isHovered
