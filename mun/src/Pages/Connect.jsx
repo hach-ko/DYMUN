@@ -68,18 +68,18 @@ export default function Connect() {
 					overflowX: "hidden",
 				}}
 			>
-				{/* Hero Section */}
-				<section className="py-20 px-7 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-b-3xl shadow-2xl">
-					<div className="max-w-4xl mx-auto text-center">
-						<h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-							Connect With Us
-						</h1>
-						<p className="text-xl md:text-2xl text-blue-100 drop-shadow-md">
-							Having questions? Need support? We&apos;re here to help make your DYMUN
-							experience exceptional.
-						</p>
-					</div>
-				</section>
+				   {/* Hero Section without committee image */}
+				   <section className="py-20 px-7 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-b-3xl shadow-2xl">
+					   <div className="max-w-4xl mx-auto text-center">
+						   <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+							   Connect With Us
+						   </h1>
+						   <p className="text-xl md:text-2xl text-blue-100 drop-shadow-md">
+							   Having questions? Need support? We&apos;re here to help make your DYMUN
+							   experience exceptional.
+						   </p>
+					   </div>
+				   </section>
 
 				{/* Key Contacts Above */}
 				<section className="py-12 px-6">

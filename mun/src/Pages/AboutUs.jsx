@@ -48,9 +48,10 @@ export default function AboutUs() {
         className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 box-border overflow-x-hidden"
         style={{
           marginLeft: `${SIDEBAR_WIDTH}px`,
-          padding: '24px',
-          maxWidth: `calc(1400px - ${SIDEBAR_WIDTH}px)`,
-          width: `calc(100vw - ${SIDEBAR_WIDTH}px)`,
+          paddingLeft: 32,
+          paddingRight: 24,
+          maxWidth: "1400px",
+          marginRight: "auto",
         }}
       >
         {/* Hero */}
@@ -132,13 +133,13 @@ export default function AboutUs() {
 
         {/* Organizing Committee */}
         <section className="py-20 bg-white/90 backdrop-blur-md rounded-xl shadow-lg">
-          <div className="text-center max-w-7xl mx-auto px-6">
-            <h2 className="text-4xl font-bold text-slate-900 mb-12">Organizing Committee</h2>
+          <div className="text-center max-w-5xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-slate-900 mb-12 text-center">Organizing Committee</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {ocMembers.map(member => (
-                <div key={member.name} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <h3 className="font-semibold text-lg text-slate-900">{member.name}</h3>
-                  <p className="text-slate-600 text-sm mt-1">{member.role}</p>
+                <div key={member.name} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col items-center justify-center">
+                  <h3 className="font-semibold text-lg text-slate-900 text-center">{member.name}</h3>
+                  <p className="text-slate-600 text-sm mt-1 text-center">{member.role}</p>
                 </div>
               ))}
             </div>

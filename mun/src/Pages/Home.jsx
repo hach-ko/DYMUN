@@ -3,6 +3,7 @@ import Layout from "../Layout";
 import { Button } from "../components/ui/Button";
 import { Users, ArrowRight } from "lucide-react";
 import Logo from "../assets/DYMUN.png";
+import { useNavigate } from "react-router-dom";
 
 const SIDEBAR_WIDTH = 260;
 
@@ -136,6 +137,7 @@ const committeeGroups = [
 ];
 
 export default function Home() {
+	const navigate = useNavigate();
 	// All committee names for buttons
 	const allCommittees = committeeGroups.flatMap((g) => g.committees.map((c) => c.name));
 	// Refs for each committee card
@@ -180,7 +182,7 @@ export default function Home() {
 		})),
 	}));
 
-	return (
+		return (
 		<Layout currentPageName="Home">
 			<div
 				className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50"
@@ -217,7 +219,7 @@ export default function Home() {
 								asChild
 								style={{ minWidth: 200, fontWeight: 600 }}
 							>
-								<a href="/Resources">Resources</a>
+								<a href="/register">Register Now</a>
 							</Button>
 							<div className="flex items-center gap-2 text-slate-700">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -306,7 +308,7 @@ export default function Home() {
 								key={name}
 								className={committeeBtn}
 								style={btnStyle}
-								onClick={() => handleCommitteeClick(name)}
+								onClick={() => navigate(`/committee/${encodeURIComponent(name)}`)}
 								tabIndex={0}
 							>
 								{name}
@@ -318,38 +320,42 @@ export default function Home() {
 						<div key={group.groupTitle} className="mb-16">
 							<h3 className="text-3xl font-bold text-slate-800 mb-6 text-left md:text-center">{group.groupTitle}</h3>
 							<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-								{group.committees.map((c) => (
-									<div
-										key={c.name}
-										ref={committeeRefs[c.name]}
-										className="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/90 backdrop-blur-sm group hover:-translate-y-1 hover:scale-105 flex flex-col justify-between"
-										style={{ userSelect: "none" }}
-									>
-										<div className="relative overflow-hidden rounded-t-xl h-48">
-											<img
-												src={c.img}
-												alt={c.subtitle}
-												className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 select-none"
-												draggable={false}
-											/>
-											<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-											<div className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold absolute top-4 right-4 transition-all duration-300 group-hover:scale-110 shadow-lg border-2 ${c.badge}`}>
-												{c.level}
-											</div>
-										</div>
-										<div className="flex flex-col space-y-1.5 p-6 pt-6">
-											<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 select-none">{c.name}</h3>
-											<p className="text-sm text-slate-600 font-medium h-12 leading-tight select-none">{c.subtitle}</p>
-										</div>
-										<div className="p-6 pt-0">
-											<p className="text-sm text-slate-500 line-clamp-3 h-16 leading-relaxed select-none">{c.topic}</p>
-											<div className="mt-4 flex items-center gap-2 text-xs text-slate-400 select-none">
-												<Users className="w-3 h-3" />
-												<span>Chair: {c.chair}</span>
-											</div>
-										</div>
-									</div>
-								))}
+												{group.committees.map((c) => (
+													<div
+														key={c.name}
+														ref={committeeRefs[c.name]}
+														className="rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 bg-white/90 backdrop-blur-sm group hover:-translate-y-1 hover:scale-105 flex flex-col justify-between cursor-pointer"
+														style={{ userSelect: "none" }}
+														onClick={() => navigate(`/committee/${encodeURIComponent(c.name)}`)}
+														tabIndex={0}
+														role="button"
+														aria-label={`View details for ${c.name}`}
+													>
+														<div className="relative overflow-hidden rounded-t-xl h-48">
+															<img
+																src={c.img}
+																alt={c.subtitle}
+																className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 select-none"
+																draggable={false}
+															/>
+															<div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+															<div className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold absolute top-4 right-4 transition-all duration-300 group-hover:scale-110 shadow-lg border-2 ${c.badge}`}>
+																{c.level}
+															</div>
+														</div>
+														<div className="flex flex-col space-y-1.5 p-6 pt-6">
+															<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 select-none">{c.name}</h3>
+															<p className="text-sm text-slate-600 font-medium h-12 leading-tight select-none">{c.subtitle}</p>
+														</div>
+														<div className="p-6 pt-0">
+															<p className="text-sm text-slate-500 line-clamp-3 h-16 leading-relaxed select-none">{c.topic}</p>
+															<div className="mt-4 flex items-center gap-2 text-xs text-slate-400 select-none">
+																<Users className="w-3 h-3" />
+																<span>Chair: {c.chair}</span>
+															</div>
+														</div>
+													</div>
+												))}
 							</div>
 						</div>
 					))}

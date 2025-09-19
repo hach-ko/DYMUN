@@ -97,28 +97,38 @@ const PreferenceCard = ({ number, committees, value, onChange, placeholder, requ
 export default function Register() {
   return (
     <Layout currentPageName="Register">
-    <div className="min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-6">
-      <div className="flex-1 flex justify-center">
-  <div className="ml-64 w-full flex justify-center">
-          <Card className="max-w-md border-none shadow-2xl bg-white/90 backdrop-blur-sm">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-6">
+        <div className="ml-64 w-full flex flex-col items-center justify-center">
+          <Card className="max-w-xl w-full border-none shadow-2xl bg-white/90 backdrop-blur-sm rounded-3xl">
             <CardHeader className="text-center pb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <Loader2 className="w-8 h-8 text-white animate-spin" />
-              </div>
-              <CardTitle className="text-2xl font-bold text-slate-900">Work in Progress</CardTitle>
+              <CardTitle className="text-3xl font-bold text-slate-900 mb-2">Delegate Registration</CardTitle>
             </CardHeader>
             <CardContent className="text-center">
-              <p className="text-slate-600 mb-4">
-                The registration page is coming soon.<br />
-                Please check back later!
+              <p className="text-slate-700 mb-6 text-base leading-relaxed">
+                Register now to join DYMUN and experience two days of real-world MUN, debate, and diplomacy with students from diverse schools. All are welcome!
               </p>
-              <Skeleton className="w-full h-8 mb-2" />
-              <Skeleton className="w-2/3 h-8 mx-auto" />
+              <Button
+                asChild
+                size="large"
+                variant="primary"
+                className="w-full font-bold text-lg py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg transition-all duration-300"
+                style={{ minWidth: 220, fontSize: "1.25rem", letterSpacing: "0.02em" }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <a
+                  href="https://forms.gle/Mc6bXdwYeK4KTJ557"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
+                >
+                  Register as Delegate
+                </a>
+              </Button>
             </CardContent>
           </Card>
         </div>
       </div>
-    </div>
     </Layout>
   );
 }
