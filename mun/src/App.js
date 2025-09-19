@@ -8,6 +8,7 @@ import Dashboard from './Pages/Dashboard';
 import Register from './Pages/Register';
 import Resources from './Pages/Resources';
 import Admin from './Pages/Admin';
+import CommitteeInfo from './Pages/CommitteeInfo';
 
 function App() {
   return (
@@ -18,6 +19,14 @@ function App() {
           element={
             <ErrorBoundary>
               <Home />
+            </ErrorBoundary>
+          }
+        />
+        <Route
+          path="/committee/:name"
+          element={
+            <ErrorBoundary>
+              <CommitteeInfo />
             </ErrorBoundary>
           }
         />
@@ -38,14 +47,6 @@ function App() {
           }
         />
         <Route
-          path="/dashboard"
-          element={
-            <ErrorBoundary>
-              <Dashboard />
-            </ErrorBoundary>
-          }
-        />
-        <Route
           path="/register"
           element={
             <ErrorBoundary>
@@ -58,14 +59,6 @@ function App() {
           element={
             <ErrorBoundary>
               <Resources />
-            </ErrorBoundary>
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-            <ErrorBoundary>
-              <Admin />
             </ErrorBoundary>
           }
         />
