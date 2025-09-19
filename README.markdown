@@ -1,6 +1,8 @@
 # DYMUN 2025 - Model United Nations
 
-![DYMUN Logo](https://raw.githubusercontent.com/hach-ko/DYMUN/refs/heads/main/mun/public/DYMUN.png)Welcome to the official repository for **DYMUN 2025**, a dynamic Model United Nations platform designed to foster diplomacy, critical thinking, and global awareness among students from Primary to High School. This project powers the DYMUN website, providing an immersive experience for delegates, organizers, and attendees of the conference held on **October 10-11, 2025**, at D Y Patil International School, Navi Mumbai, India.
+![DYMUN Logo](https://raw.githubusercontent.com/hach-ko/DYMUN/refs/heads/main/mun/public/DYMUN.png)
+
+Welcome to the official repository for **DYMUN 2025**, a dynamic Model United Nations platform designed to foster diplomacy, critical thinking, and global awareness among students from Primary to High School. This project powers the DYMUN website, providing an immersive experience for delegates, organizers, and attendees of the conference held on **October 10-11, 2025**, at D Y Patil International School, Navi Mumbai, India.
 
 ## Table of Contents
 
@@ -16,22 +18,6 @@
 DYMUN (Dynamic Model United Nations) is an exciting platform where students step into the roles of global leaders to debate, negotiate, and resolve pressing international issues. Held over two days, DYMUN 2025 brings together young minds to sharpen their skills in diplomacy, public speaking, and collaboration.
 
 This repository contains the codebase for the DYMUN website, built with **React**, **Tailwind CSS**, and modern JavaScript. The site includes pages for registration, resources, team information, and contact details, all designed to provide a seamless user experience across devices.
-
-### Key Objectives
-
-- **Global Awareness** 🌐: Educate participants on international issues and geopolitics.
-- **Skill Development** 📈: Enhance public speaking, negotiation, and critical thinking skills.
-- **Community Building** 🤝: Foster connections among students passionate about diplomacy.
-
-## Features
-
-- **Responsive Design**: Optimized for phones, tablets, and desktops with a sleek, modern interface.
-- **Interactive Sidebar**: Collapsible navigation for mobile users with smooth animations and accessibility.
-- **Registration System**: User-friendly form for delegates to sign up, with committee and country preferences.
-- **Dynamic Content**: Pages for "About Us," "Connect," and "Resources" with rich visuals and intuitive layouts.
-- **Admin Dashboard**: Secure access for organizers to manage registrations and conference details.
-- **Social Media Integration**: Easy access to DYMUN's Instagram, WhatsApp, and email for real-time updates.
-
 ## Getting Started
 
 To run the DYMUN website locally or contribute to its development, follow these steps:
@@ -124,11 +110,11 @@ Have questions or need support? Reach out to the DYMUN team:
 
 - **Email**: info@dymun2025.com
 - **Instagram**: @dymun.nerul
-- **Venue**:\
-  D Y Patil International School\
-  Sector 7, Nerul, Navi Mumbai\
-  Maharashtra 400706, India\
-  View Directions
+- **Venue**:
+  D Y Patil International School
+  Sector 7, Nerul, Navi Mumbai
+  Maharashtra 400706, India
+
 - **Support Hours**:
   - Monday–Friday: 9:00 AM–6:00 PM IST
   - Saturday: 10:00 AM–4:00 PM IST
@@ -141,4 +127,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ---
 
-*Built with 💙 by the DYMUN 2025 Organizing Committee*
+*Built with 💙 by Dhruv Raina*
