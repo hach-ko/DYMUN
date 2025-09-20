@@ -12,9 +12,9 @@ export function Button({
     "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group transition-all duration-300 rounded-lg shadow-xl hover:shadow-2xl no-underline hover:no-underline";
   const variants = {
     primary:
-      "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700",
+      "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-700 hover:to-indigo-700 hover:text-white",
     secondary:
-      "bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600",
+      "bg-gradient-to-r from-green-500 to-emerald-500 text-white hover:from-green-600 hover:to-emerald-600 hover:text-white",
   };
   const sizes = {
     large: "h-12 px-8 text-lg",
@@ -39,7 +39,7 @@ export function Button({
         whileHover={{ scale: 1.07 }}
         whileTap={{ scale: 0.98 }}
         className={`${baseClasses} ${variants[variant]} ${sizes[size]}`}
-        style={{ textDecoration: "none" }}
+        style={{ textDecoration: "none", color: "inherit" }}
         {...props}
       >
         {content}
@@ -52,7 +52,7 @@ export function Button({
       whileHover={{ scale: 1.07 }}
       whileTap={{ scale: 0.98 }}
       className={`${baseClasses} ${variants[variant]} ${sizes[size]}`}
-      style={{ textDecoration: "none" }} // Added for consistency
+      style={{ textDecoration: "none" }}
       {...props}
     >
       {content}

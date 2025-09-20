@@ -6,16 +6,13 @@ import {
   BookOpen,
   MessageCircle,
   FileText,
-  Shield,
-  LogOut,
-  User,
 } from "lucide-react";
 import Logo from "../../assets/DYMUN.png";
 
 // Context for Sidebar open/close (for mobile)
 const SidebarContext = createContext();
 export function SidebarProvider({ children }) {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(window.innerWidth >= 1024); // Show sidebar by default on desktop
   return (
     <SidebarContext.Provider value={{ open, setOpen }}>
       {children}
@@ -28,68 +25,83 @@ export function useSidebar() {
 
 // Sidebar main wrapper
 export function Sidebar({ children, className }) {
+  const { open, setOpen } = useSidebar();
+
+  // Hide sidebar on mobile/tablet unless toggled
   return (
-    <aside
-      className={`fixed top-0 left-0 h-screen w-64 bg-white/80 backdrop-blur-md shadow-xl transition-all duration-300 ${className || ""}`}
-      style={{ borderRight: "1px solid rgba(0, 0, 0, 0.05)" }}
-    >
+    <>
+      {/* Overlay for mobile when sidebar is open */}
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 16,
-          padding: "24px 28px",
-          borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
-        }}
+        className={`fixed inset-0 z-40 bg-black/30 transition-opacity duration-300 ${
+          open && window.innerWidth < 1024 ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setOpen(false)}
+        style={{ pointerEvents: open && window.innerWidth < 1024 ? "auto" : "none" }}
+      />
+      <aside
+        className={`fixed top-0 left-0 h-screen w-64 bg-white/80 backdrop-blur-md shadow-xl transition-transform duration-300 z-50 ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } ${className || ""}`}
+        style={{ borderRight: "1px solid rgba(0, 0, 0, 0.05)" }}
       >
-        <img
-          src={Logo}
-          alt="DYMUN Logo"
+        <div
           style={{
-            width: 64,
-            height: 64,
-            borderRadius: "1rem",
-            boxShadow: "0 4px 16px rgba(59, 130, 246, 0.15)",
-            transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+            display: "flex",
+            alignItems: "center",
+            gap: 16,
+            padding: "24px 28px",
+            borderBottom: "1px solid rgba(0, 0, 0, 0.05)",
           }}
-        />
-        <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
-          <span
+        >
+          <img
+            src={Logo}
+            alt="DYMUN Logo"
             style={{
-              fontWeight: 800,
-              fontSize: "1.5rem",
-              color: "#1e293b",
-              letterSpacing: "-0.02em",
+              width: 64,
+              height: 64,
+              borderRadius: "1rem",
+              boxShadow: "0 4px 16px rgba(59, 130, 246, 0.15)",
+              transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
             }}
-          >
-            DYMUN
-          </span>
-          <span
-            style={{
-              fontWeight: 400,
-              fontSize: "0.875rem",
-              color: "#64748b",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            2025 Conference
-          </span>
+          />
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <span
+              style={{
+                fontWeight: 800,
+                fontSize: "1.5rem",
+                color: "#1e293b",
+                letterSpacing: "-0.02em",
+              }}
+            >
+              DYMUN
+            </span>
+            <span
+              style={{
+                fontWeight: 400,
+                fontSize: "0.875rem",
+                color: "#64748b",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              2025 Conference
+            </span>
+          </div>
         </div>
-      </div>
-      <nav style={{ marginTop: 24, padding: "0 16px" }}>
-        <ul style={{ listStyle: "none", padding: 0 }}>
-          {navItems.map((item) => (
-            <SidebarMenuItem
-              key={item.path}
-              to={item.path}
-              icon={item.icon}
-              label={item.label}
-            />
-          ))}
-        </ul>
-      </nav>
-      {children}
-    </aside>
+        <nav style={{ marginTop: 24, padding: "0 16px" }}>
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            {navItems.map((item) => (
+              <SidebarMenuItem
+                key={item.path}
+                to={item.path}
+                icon={item.icon}
+                label={item.label}
+              />
+            ))}
+          </ul>
+        </nav>
+        {children}
+      </aside>
+    </>
   );
 }
 
