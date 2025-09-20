@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "../Layout";
 import { Button } from "../components/ui/Button";
@@ -127,6 +127,13 @@ export default function CommitteeInfo() {
     (c) => c.name.toLowerCase() === (committeeName || "").toLowerCase()
   );
 
+  // Animation state
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(timeout);
+  }, []);
+
   if (!committee) {
     return (
       <Layout currentPageName="CommitteeInfo">
@@ -141,24 +148,15 @@ export default function CommitteeInfo() {
     );
   }
 
-  // Animation state
-  const [visible, setVisible] = React.useState(false);
-  React.useEffect(() => {
-    const timeout = setTimeout(() => setVisible(true), 100);
-    return () => clearTimeout(timeout);
-  }, []);
-
-  // Sidebar width (same as SIDEBAR_WIDTH in Home.jsx)
-  const SIDEBAR_WIDTH = 260;
-
   return (
     <Layout currentPageName="CommitteeInfo">
       <div
-        className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-6 transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-        style={{ marginLeft: SIDEBAR_WIDTH, maxWidth: 'calc(100vw - 40px - ' + SIDEBAR_WIDTH + 'px)', transition: 'margin-left 0.5s cubic-bezier(.4,0,.2,1)' }}
+        className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 p-4 sm:p-8 flex items-center justify-center transition-all duration-700 ease-out ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+        }`}
       >
-        <div className="max-w-3xl mx-auto bg-white/90 rounded-xl shadow-2xl overflow-hidden">
-          <div className="relative h-64 w-full overflow-hidden">
+        <div className="w-full max-w-3xl bg-white/90 rounded-xl shadow-2xl overflow-hidden">
+          <div className="relative h-56 sm:h-64 w-full overflow-hidden">
             <img
               src={committee.img}
               alt={committee.name}
@@ -170,7 +168,7 @@ export default function CommitteeInfo() {
               <span className="text-lg font-bold text-blue-700">{committee.name}</span>
             </div>
           </div>
-          <div className="p-8">
+          <div className="p-6 sm:p-8">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">DYMUN Committee Brief</h2>
             {committee.overview && (
               <div className="mb-6">

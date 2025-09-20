@@ -112,11 +112,10 @@ export default function Resources() {
   return (
     <Layout currentPageName="Resources">
       <div
-        className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 px-4 md:px-10 py-10 transition-all duration-300"
+        className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 w-full px-4 md:px-10 py-10 transition-all duration-300"
         style={{
-          marginLeft: "260px",
           maxWidth: "1200px",
-          marginRight: "auto",
+
           overflowX: "hidden",
         }}
       >
