@@ -21,7 +21,7 @@ const teamMembers = [
     name: 'Yuvraj Behera', 
     role: 'Deputy Joint Secretary General', 
     image: null,
-    bio: 'Coordinating committee operations and ensuring smooth conference execution.'
+    bio: 'I will be working closely with the Secretariat to ensure smooth coordination across all committees. My role is to support both the Executive Board and delegates, making sure the conference runs seamlessly.'
   },
   { 
     name: 'Suvirr Menon', 
