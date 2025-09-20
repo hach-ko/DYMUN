@@ -12,7 +12,7 @@ const committees = [
     class: "Primary School (Grades 3-5)",
     overview:
       "Delve into the world of magic and mystery as your favorite Disney characters transcend their utopian bounds to take on the world’s biggest dilemmas! With DYMUN’s Disney committee, primary students deliberate on the 21st century’s most baffling conundrums, except through the lens of their classic role models.",
-    chair: "Fairy Godmother",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -20,7 +20,7 @@ const committees = [
     img: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "Primary School (Grades 3-5)",
     overview: "",
-    chair: "Gianni Infantino",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -29,7 +29,7 @@ const committees = [
     class: "Primary School (Grades 3-5)",
     overview:
       "The Harry Potter universe brings forth an eclectic amalgamation of unparalleled camaraderie, courage and the sheer fascination of something so ambitiously magical. With DYMUN’s Harry Potter committee, this larger-than-life fantasy is complemented by pragmatic power and passion as young delegates step outside the pages of the books to take on the mantle of magical leaders that reshape their most cherished universe! ",
-    chair: "Professor McGonagall",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -38,7 +38,7 @@ const committees = [
     class: "Middle School (Grades 6-8)",
     overview:
       "The United Nations Counter-Terrorism Committee (UN CTC) was established in 2001 by UN Security Council Resolution 1373 in response to the 9/11 attacks. Its objective is to monitor states’ implementation of counter-terrorism measures, including criminalizing terrorist financing, enhancing border controls, improving information sharing, and strengthening legal frameworks against terrorism. The CTC works through its Executive Directorate (CTED) to assess member states’ capacities, provide technical assistance, and ensure compliance with international obligations while respecting human rights and international law.",
-    chair: "Ms. Radhika Singh",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -47,7 +47,7 @@ const committees = [
     class: "Middle School (Grades 6-8)",
     overview:
       "UNOOSA is tasked with promoting the peaceful, sustainable, and cooperative use of outer space, ensuring that space exploration and technology remain accessible to all states. The committee’s purpose is to develop frameworks that regulate emerging space activities, mitigate risks such as weaponization and space debris, and advance equitable access to space-based technologies for development. By fostering multilateral dialogue and codifying norms, delegates work to ensure that outer space remains a domain of shared progress and global security rather than competition and conflict.",
-    chair: "Dr. Lars Müller",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -55,7 +55,7 @@ const committees = [
     img: "https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?q=80&w=1357&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "Middle School (Grades 6-8)",
     overview: "",
-    chair: "Mr. Virat Kohli",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -64,7 +64,7 @@ const committees = [
     class: "Middle School (Grades 6-8)",
     overview:
       "SDG 5 aims to dismantle entrenched gender disparities by advancing policies that ensure women' s agency, representation and equal opportunity. DYMUN's SDG 5 committee efficaciously strives to focus on international collaboration, mobilize resources and shape frameworks that translate visions into reinforceable action. By mainstreaming inclusion across all sectors, delegates will get a chance to work towards the goal of establishing gender equality as a key driver of sustainable development rather than a peripheral idea.",
-    chair: "Ms. Chloe Dubois",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -73,7 +73,7 @@ const committees = [
     class: "High School (Grades 9-12)",
     overview:
       "In this committee, economics perennially outrivals the sterile formulae and graphs that are believed to shape it, epitomising living, breathing narratives of resilience, power, and inequality. DYMUN’s ECOFIN committee invites delegates to interact with the forces that shape nations, reminding them that each decision made here has the potency to reinvent the intricate (and ever so fragile) tapestry of global trade and politics.",
-    chair: "Mr. Charles Dubois",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -81,7 +81,7 @@ const committees = [
     img: "https://images.unsplash.com/photo-1596574027151-2ce81d85af3e?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "High School (Grades 9-12)",
     overview: "",
-    chair: "Mr. Rajiv Menon",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -90,7 +90,7 @@ const committees = [
     class: "High School (Grades 9-12)",
     overview:
       "The UNSC bears primary responsibility for the maintenance of international peace and security, empowered to mandate binding resolutions, authorize interventions, and impose sanctions. In this committee, delegates aim to negotiate collective responses to emerging threats, balance state sovereignty with humanitarian imperatives, and ensure that peacekeeping and conflict-resolution efforts are both legitimate and effective. The Council’s work is defined by urgency, authority, and the need for consensus among diverse national interests, making it the most pivotal arena for global security governance.",
-    chair: "Eleanor Vance",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -98,7 +98,7 @@ const committees = [
     img: "https://images.unsplash.com/photo-1589578527966-fdac0f44566c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "High School (Grades 9-12)",
     overview: "",
-    chair: "Ms. Fatima Al-Jamil",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -106,7 +106,7 @@ const committees = [
     img: "https://plus.unsplash.com/premium_photo-1682125784386-d6571f1ac86a?q=80&w=908&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "High School (Grades 9-12)",
     overview: "",
-    chair: "Dr. Aris Patel",
+    chair: "To be announced",
     resources: [],
   },
   {
@@ -114,7 +114,7 @@ const committees = [
     img: "https://images.unsplash.com/photo-1503428593586-e225b39bddfe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     class: "High School (Grades 9-12)",
     overview: "",
-    chair: "Ms. Hannah Weiss",
+    chair: "To be announced",
     resources: [],
   },
 ];
@@ -169,7 +169,7 @@ export default function CommitteeInfo() {
             </div>
           </div>
           <div className="p-6 sm:p-8">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">DYMUN Committee Brief</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Committee Brief</h2>
             {committee.overview && (
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">Overview</h3>
