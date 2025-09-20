@@ -4,10 +4,8 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Home from './Pages/Home';
 import AboutUs from './Pages/AboutUs';
 import Connect from './Pages/Connect';
-import Dashboard from './Pages/Dashboard';
 import Register from './Pages/Register';
 import Resources from './Pages/Resources';
-import Admin from './Pages/Admin';
 import CommitteeInfo from './Pages/CommitteeInfo';
 
 function App() {
