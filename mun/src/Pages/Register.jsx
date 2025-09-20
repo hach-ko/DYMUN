@@ -107,24 +107,22 @@ export default function Register() {
               <p className="text-slate-700 mb-6 text-base leading-relaxed">
                 Register now to join DYMUN and experience two days of real-world MUN, debate, and diplomacy with students from diverse schools. All are welcome!
               </p>
-              <Button
-                asChild
-                size="large"
-                variant="primary"
-                className="w-full font-bold text-lg py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg transition-all duration-300"
-                style={{ minWidth: 220, fontSize: "1.25rem", letterSpacing: "0.02em" }}
-                whileHover={{ scale: 1.04 }}
-                whileTap={{ scale: 0.98 }}
+              <a
+                href="https://forms.gle/Mc6bXdwYeK4KTJ557"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+                className="w-full block"
               >
-                <a
-                  href="https://forms.gle/Mc6bXdwYeK4KTJ557"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none" }}
+                <Button
+                  size="large"
+                  variant="primary"
+                  className="w-full font-bold text-lg py-4 rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg transition-all duration-300 hover:scale-105 active:scale-98"
+                  style={{ minWidth: 220, fontSize: "1.25rem", letterSpacing: "0.02em" }}
                 >
                   Register as Delegate
-                </a>
-              </Button>
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
