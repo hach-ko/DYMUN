@@ -41,12 +41,12 @@ const ocMembers = [
   { name: 'Revealing soon', role: 'Events Coordinator' }
 ];
 
-// Chairs - names hidden
+// Chairs - names changed to "To be announced"
 const chairs = [
-  { name: 'Revealing soon', committee: 'UNSC', experience: '' },
-  { name: 'Revealing soon', committee: 'WHO', experience: '' },
-  { name: 'Revealing soon', committee: 'UNESCO', experience: '' },
-  { name: 'Revealing soon', committee: 'ECOSOC', experience: '' }
+  { name: 'To be announced', committee: 'UNSC', experience: '' },
+  { name: 'To be announced', committee: 'WHO', experience: '' },
+  { name: 'To be announced', committee: 'UNESCO', experience: '' },
+  { name: 'To be announced', committee: 'ECOSOC', experience: '' }
 ];
 
 export default function AboutUs() {

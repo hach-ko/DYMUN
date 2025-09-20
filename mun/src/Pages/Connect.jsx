@@ -12,8 +12,8 @@ const contactMethods = [
 		icon: Mail,
 		title: 'Email',
 		subtitle: 'General Inquiries',
-		contact: 'info@dymun2025.com',
-		action: 'mailto:info@dymun2025.com',
+		contact: 'dymun@dypisnerul.in',
+		action: 'mailto:dymun@dypisnerul.in',
 		color: 'bg-blue-500',
 	},
 	{
