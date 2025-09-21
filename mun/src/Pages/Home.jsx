@@ -388,12 +388,12 @@ export default function Home() {
 							</div>
 							{committeeCardsByGroup.map((group) => (
 								<div key={group.groupTitle} className="mb-16">
-									<h3 className="text-3xl font-bold text-slate-800 mb-6 text-left md:text-center">{group.groupTitle}</h3>
-									<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+									<h3 className="text-3xl font-bold text-slate-800 mb-6 text-center">{group.groupTitle}</h3>
+									<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
 										{group.committees.map((c, index) => (
 											<div
 												key={c.name}
-												className="animate-popIn"
+												className="animate-popIn w-full max-w-sm"
 												style={{ animationDelay: `${index * 100}ms` }}
 												data-index={index}
 											>
@@ -420,10 +420,10 @@ export default function Home() {
 													</div>
 													<div className="flex flex-col space-y-1.5 p-6 pt-6">
 														<h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors duration-300 select-none">{c.name}</h3>
-														<p className="text-sm text-slate-600 font-medium h-12 leading-tight select-none">{c.subtitle}</p>
+														<p className="text-sm text-slate-600 font-medium min-h-[3rem] leading-tight select-none">{c.subtitle}</p>
 													</div>
-													<div className="p-6 pt-0">
-														<p className="text-sm text-slate-500 line-clamp-3 h-16 leading-relaxed select-none">{c.topic}</p>
+													<div className="p-6 pt-0 flex flex-col min-h-0">
+														<p className="text-base text-slate-500 leading-relaxed select-none">{c.topic}</p>
 														<div className="mt-4 flex items-center gap-2 text-xs text-slate-400 select-none">
 															<Users className="w-3 h-3" />
 															<span>Chair: {c.chair}</span>
