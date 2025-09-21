@@ -21,24 +21,24 @@ const teamMembers = [
     name: 'Yuvraj Behera', 
     role: 'Deputy Joint Secretary General', 
     image: null,
-    bio: 'I will be working closely with the Secretariat to ensure smooth coordination across all committees. My role is to support both the Executive Board and delegates, making sure the conference runs seamlessly.'
+    bio: 'Yuvraj works closely with the Secretariat to facilitate seamless coordination across all committees. Their role involves supporting both the Executive Board and delegates, ensuring the conference operates flawlessly.'
   },
   { 
     name: 'Suvirr Menon', 
     role: 'Deputy Joint Secretary General', 
     image: null,
-    bio: 'Managing logistics and creating an unforgettable experience for all delegates.'
+    bio: 'Suvirr co-leads from the front, leveraging international Model United Nations experience to ensure smooth conference execution. They oversee committees and serve as a vital bridge between the Executive Board and delegates.'
   }
 ];
 
 // OC members - names hidden
 const ocMembers = [
-  { name: 'Revealing soon', role: 'Social Media' },
-  { name: 'Revealing soon', role: 'IT Team' },
-  { name: 'Revealing soon', role: 'Content Management / Editing Team' },
-  { name: 'Revealing soon', role: 'Logistics' },
-  { name: 'Revealing soon', role: 'Hospitality' },
-  { name: 'Revealing soon', role: 'Events Coordinator' }
+  { name: 'Ruveer', role: ' ' },
+  { name: 'Krisha', role: ' ' },
+  { name: 'Atharva', role: ' ' },
+  { name: 'Zaina', role: ' ' },
+  { name: 'Swarupa', role: ' ' },
+  { name: 'Dhruv', role: ' ' }
 ];
 
 // Chairs - names changed to "To be announced"
