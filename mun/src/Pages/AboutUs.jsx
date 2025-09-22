@@ -12,16 +12,17 @@ const DefaultIcon = () => (
 
 const teamMembers = [
   { 
-    name: 'Aayan Kumar', 
-    role: 'Secretary General', 
-    image: null,
-    bio: 'Leading DYMUN with 5+ years of MUN experience and passion for diplomacy.'
-  },
-  { 
+
     name: 'Yuvraj Behera', 
     role: 'Deputy Joint Secretary General', 
     image: null,
     bio: 'Yuvraj works closely with the Secretariat to facilitate seamless coordination across all committees. Their role involves supporting both the Executive Board and delegates, ensuring the conference operates flawlessly.'
+  },
+  { 
+    name: 'Aayan Kumar', 
+    role: 'Secretary General', 
+    image: null,
+    bio: 'Leading DYMUN with 5+ years of MUN experience and passion for diplomacy.'
   },
   { 
     name: 'Suvirr Menon', 
@@ -38,7 +39,7 @@ const ocMembers = [
   { name: 'Atharva', role: ' ' },
   { name: 'Zaina', role: ' ' },
   { name: 'Swarupa', role: ' ' },
-  { name: 'Dhruv', role: ' ' }
+  { name: 'Dhruv', role: 'IT Team' }
 ];
 
 // Chairs - names changed to "To be announced"

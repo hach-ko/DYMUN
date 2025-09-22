@@ -13,27 +13,9 @@ export default function Register() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Disable scrolling on small screens
-  useEffect(() => {
-    const handleScrollLock = () => {
-      if (window.innerWidth < 640) {
-        document.body.style.overflow = "hidden";
-      } else {
-        document.body.style.overflow = "";
-      }
-    };
-
-    handleScrollLock(); // Run on mount
-    window.addEventListener("resize", handleScrollLock);
-    return () => {
-      window.removeEventListener("resize", handleScrollLock);
-      document.body.style.overflow = ""; // Cleanup
-    };
-  }, []);
-
   return (
     <Layout currentPageName="Register">
-      <div className="h-screen sm:min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 w-full px-6 py-6 overflow-y-hidden sm:overflow-y-auto">
+      <div className="min-h-[100dvh] flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 w-full px-4 sm:px-6 py-6">
         <style>
           {`
             @keyframes fadeScaleIn {
@@ -74,11 +56,11 @@ export default function Register() {
         </style>
         {isLoading ? (
           <Skeleton
-            className="max-w-xl w-full h-64 rounded-3xl shadow-2xl animate-shimmer"
+            className="max-w-xl w-full h-64 rounded-3xl shadow-2xl animate-shimmer mx-auto"
           />
         ) : (
           <Card
-            className="max-w-xl w-full border-none shadow-2xl bg-white/90 backdrop-blur-sm rounded-3xl animate-fadeScaleIn"
+            className="max-w-xl w-full mx-auto border-none shadow-2xl bg-white/90 backdrop-blur-sm rounded-3xl animate-fadeScaleIn"
           >
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-3xl font-bold text-slate-900 mb-2">
